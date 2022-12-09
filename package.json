@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/pedrosgmagalhaes/interview-test-nodejs/issues"
   },
-  "homepage": "https://github.com/pedrosgmagalhaes/interview-test-nodejs#readme"
+  "homepage": "https://github.com/pedrosgmagalhaes/interview-test-nodejs#readme",
+  "dependencies": {
+    "date-fns": "^2.29.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.0"
+  }
 }
