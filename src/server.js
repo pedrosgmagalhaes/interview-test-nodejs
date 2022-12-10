@@ -6,9 +6,10 @@ const app = express();
 const connect = async () => {
     try {
         const client = await mongoose.connect(
-            'mongodb://localhost:27017',
+            'mongodb://mongodb:27017',
             {
                 useNewUrlParser: true,
+                useUnifiedTopology: true,
                 connectTimeoutMS: 10000
             }
         );
@@ -28,8 +29,7 @@ connect()
         console.error(err);
     });
 
-app.use(express.json());
-app.use(bodyParser.json());
+app.use(express.json);
 
 // Define routes
 app.use('/api/homepage', require('./routes/api/homepage'));

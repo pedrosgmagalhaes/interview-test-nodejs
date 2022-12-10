@@ -8,11 +8,12 @@ router.get('/test', async (req, res) => {
 
 // GET request for homepage feed
 router.get('/getFeeds', async (req, res) => {
+
   // Query to return 10 posts
-  const query = await Post.find().limit(10);
+  const query = await Post.find();
 
   // Execute the query and handle the result
-  query.exec((err, posts) => {
+  await query.exec((err, posts) => {
         if (err) {
             // Handle query error
             return res.status(500).send(err);
