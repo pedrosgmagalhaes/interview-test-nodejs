@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "user": "1234567890abcdef12345678",
+    "date": "2022-12-10T17:35:23.000Z",
+    "type": "original"
+  },
+  {
+    "content": "Consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+    "user": "0987654321abcdef09876543",
+    "date": "2022-12-10T17:35:23.000Z",
+    "type": "repost"
+  },
+  {
+    "content": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "user": "abcdef1234567890abcdef12",
+    "date": "2022-12-10T17:35:23.000Z",
+    "type": "quote"
+  },
+  {
+    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+    "user": "1234567890abcdef12345678",
+    "date": "2022-12-10T17:35:23.000Z",
+    "type": "original"
+  },
+  {
+    "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse.",
+    "user": "0987654321abcdef09876543",
+    "date": "2022-12-10T17:35:23.000Z",
+    "type": "repost"
+  }
+]

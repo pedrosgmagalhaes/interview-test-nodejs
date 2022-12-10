@@ -7,7 +7,7 @@ const postSchema = new mongoose.Schema({
     maxlength: 777
   },
   user: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: String,
     ref: 'User',
     required: true
   },

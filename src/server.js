@@ -1,15 +1,18 @@
 const express = require('express');
-const { MongoClient } = require('mongodb');
+const mongoose = require('mongoose');
+const bodyParser = require("body-parser");
 const app = express();
 
 const connect = async () => {
     try {
-        const client = await MongoClient.connect(
+        const client = await mongoose.connect(
             'mongodb://localhost:27017',
-            { useNewUrlParser: true }
+            {
+                useNewUrlParser: true,
+                connectTimeoutMS: 10000
+            }
         );
-        const db = client.db('mydb');
-        console.log('Connected to MongoDB');
+        const db = client.db('interview-nodejs-db');
         return db;
     } catch (err) {
         console.error(err);
@@ -19,14 +22,14 @@ const connect = async () => {
 
 connect()
     .then(() => {
-        // Connection successful
+        console.error("Connection successful");
     })
     .catch((err) => {
-        // Connection failed
         console.error(err);
     });
 
 app.use(express.json());
+app.use(bodyParser.json());
 
 // Define routes
 app.use('/api/homepage', require('./routes/api/homepage'));
