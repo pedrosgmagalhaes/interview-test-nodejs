@@ -4,8 +4,7 @@ const Post = require('../../models/Post');
 
 router.get('/test', (req, res) => {
     try {
-        console.log('This is a log message.');
-        return res.status(200).send("Ok");
+        return res.status(200).send("Working");
     } catch (err) {
         console.error(err);
         return res.status(500).send('Error occurred while handling the request.');
