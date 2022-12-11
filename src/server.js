@@ -1,40 +1,44 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require("body-parser");
 const app = express();
+
+const homeRoutes = require("./routes/api/homepage");
+const profileRoutes = require("./routes/api/profile");
 
 const connect = async () => {
     try {
-        const client = await mongoose.connect(
-            'mongodb://mongodb:27017',
-            {
-                useNewUrlParser: true,
-                useUnifiedTopology: true,
-                connectTimeoutMS: 10000
-            }
+        return await mongoose.connect(
+            'mongodb://mongodb:27017/interview-nodejs-db'
         );
-        const db = client.db('interview-nodejs-db');
-        return db;
     } catch (err) {
         console.error(err);
         return err;
     }
 };
 
+app.use(express.json());
+
+// log errors
+app.use(function (err, req, res, next) {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong!');
+});
+
+app.use('/api/*', function (err, req, res, next) {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong!');
+});
+
+// Define routes
+app.use('/api/homepage', homeRoutes);
+app.use('/api/profile', profileRoutes);
+
 connect()
     .then(() => {
-        console.error("Connection successful");
+        app.listen(3000, () => {
+            console.log(`Server Started at ${3000}`)
+        })
     })
     .catch((err) => {
         console.error(err);
     });
-
-app.use(express.json);
-
-// Define routes
-app.use('/api/homepage', require('./routes/api/homepage'));
-app.use('/api/profile', require('./routes/api/profile'));
-
-app.listen(3000, () => {
-    console.log(`Server Started at ${3000}`)
-})
