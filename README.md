@@ -46,17 +46,18 @@ To install the Posterr API, follow these steps:
 - Set up your database and configure your database settings in the appropriate configuration file.
 - Run any database migrations to set up the necessary tables.
 - Start the API using your preferred method (e.g. python app.py)
-Usage
-O- nce the Posterr API is running, you can access the endpoints using your preferred HTTP client. The endpoints and their expected input and output are detailed in the API documentation.
+
+## Usage
+ - Once the Posterr API is running, you can access the endpoints using your preferred HTTP client. The endpoints and their expected input and output are detailed in the API documentation.
 
 ## Testing
 - To run the automated tests for the Posterr API, use the following command:
 
-### Copy code
 `python test/test_routes.py`
+
 This will run all tests and provide output indicating the results of each test.
 
-## Reflection and Scaling
+## Critique
 After completing the initial implementation of the Posterr API, there are a few areas that could be improved or expanded upon in the future. Some potential areas for improvement include:
 
 - Improving the performance of the API, particularly the homepage and user profile page, which may become slow as the number of posts grows. This could be achieved through optimization of the database queries, caching, or other performance-enhancing techniques.
