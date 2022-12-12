@@ -10,3 +10,5 @@ __pycache__/
 
 # Test files and output
 test_output/
+test/full_report.html
+.gitignore
